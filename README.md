@@ -5,12 +5,14 @@ This is a **nodejs** stab at processing images of handwritten characters.
 
 ## The problem 
 She made up a code. Hand wrote it on a hard to edge detect background. Curved rows enough to be difficult to process. Picked character shapes that were uneven widths with similar shared structures. And wrote enough quantity to discourage timely manual decoding.
+![source example](https://github.com/safetyscissors/calling-card/blob/master/docs/Scan-left-clean2.jpg)
 
 ## The solution
 
 This tool first splits out rows. Then splits spaces between characters. Then replaces similar characters with the next available a-z letter. It was able to strongly split out each character but only succeeded identifying similar letters ~61% of the time. But it was enough to solve for basic words like "the", "and", and my name. From the partial text file, I was able to quickly fill in the holes manually. 
 
 The majority of the row/letter splitting was done by graphing distance to white, and taking the peaks. Similar for character identification, a profile was made by making a distance to white graph along the horizontal, and again along the vertical. 
+![source example](https://github.com/safetyscissors/calling-card/blob/master/output/test8.jpg)
 
 ## Why you want to use this!
 - image processing handwritten text. uneven text, with non-grid shaped rows/letters
